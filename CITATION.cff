@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Frohman
+    given-names: Benjamin Stanley
+    orcid: "https://orcid.org/0009-0006-7068-3718"
+title: "RCW Residuals Lean Certificates for simultaneous totient and divisor-sum jumps"
+version: 1.5
+date-released: 2026-11-15
+license: Apache-2.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22713135"
+    description: "Concept DOI for the related manuscript"
