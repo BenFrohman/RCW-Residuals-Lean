@@ -1,3 +1,8 @@
+import Mathlib.Data.Int.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Nlinarith
+import Mathlib.Tactic.Ring
+
 /-!
 Author: Benjamin Stanley Frohman
 Date: 15 November 2026
@@ -6,11 +11,6 @@ License: Apache-2.0
 Machine-checked certificate that residual R2 has no solutions
 on any twist fiber with 1 ≤ |d| ≤ (r - 3)/2.
 -/
-
-import Mathlib.Data.Int.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Nlinarith
-import Mathlib.Tactic.Ring
 
 namespace RCW_R2_TwistFibers
 
