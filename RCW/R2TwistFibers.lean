@@ -1,15 +1,19 @@
+/-
+Copyright (c) 2026 Benjamin Stanley Frohman. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Benjamin Stanley Frohman
+-/
+
 import Mathlib
 
 /-!
-Author: Benjamin Stanley Frohman
-Date: 15 November 2026
-License: Apache-2.0
+# RCW.R2TwistFibers
 
 Machine-checked certificate that residual R2 has no solutions
 on any twist fiber with 1 ≤ |d| ≤ (r - 3)/2.
 -/
 
-namespace RCW_R2_TwistFibers
+namespace RCW.R2TwistFibers
 
 theorem R2_positive_fiber_no_square
     (r d Y : ℤ) (hr : 5 ≤ r) (hd_pos : 1 ≤ d) (hd_ub : 2 * d ≤ r - 3)
@@ -93,4 +97,4 @@ theorem R2_negative_fiber_no_square
     simpa [abs_of_nonneg hA1] using habs
   omega
 
-end RCW_R2_TwistFibers
+end RCW.R2TwistFibers
