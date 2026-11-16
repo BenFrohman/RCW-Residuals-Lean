@@ -1,5 +1,9 @@
 # RCW Residuals Lean Certificates — Version 1.5 Package
 
+## Kernel certificate
+
+[certificates/CERTIFICATE.md](certificates/CERTIFICATE.md): commit `229153f`, `leanprover/lean4:v4.14.0`. `lake build` passes; the sorry/axiom scan finds 0 hits; **2 theorems depend only on `propext`, `Classical.choice`, `Quot.sound`**; 2 of 2 modules replayed through the kernel, 0 failures ([CI run](https://github.com/BenFrohman/RCW-Residuals-Lean/actions/runs/43937933851)).
+
 **Author:** Benjamin Stanley Frohman  
 **Date:** 15 November 2026  
 **License:** Apache-2.0  
