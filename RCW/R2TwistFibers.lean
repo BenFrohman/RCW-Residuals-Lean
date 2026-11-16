@@ -2,6 +2,7 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Nlinarith
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Positivity
 
 /-!
 Author: Benjamin Stanley Frohman
@@ -24,8 +25,8 @@ theorem R2_positive_fiber_no_square
   have h_low : (r ^ 3 + r ^ 2) ^ 2 < Y ^ 2 := by
     have h_diff : Y ^ 2 - (r ^ 3 + r ^ 2) ^ 2 = r ^ 3 + (2 * r ^ 2 + r + 1) * d := by
       rw [h_eq]; ring
-    have h_pos1 : 0 < r ^ 3 := pow_pos hr_pos 3
-    have h_pos2 : 0 < (2 * r ^ 2 + r + 1) * d := mul_pos h_quad_pos (by linarith)
+    have h_pos1 : 0 < r ^ 3 := by positivity
+    have h_pos2 : 0 < (2 * r ^ 2 + r + 1) * d := by nlinarith
     linarith
   have h_high : Y ^ 2 < (r ^ 3 + r ^ 2 + 1) ^ 2 := by
     have h_gap : (r ^ 3 + r ^ 2 + 1) ^ 2 - Y ^ 2 =
@@ -34,17 +35,12 @@ theorem R2_positive_fiber_no_square
     have h_mul : (2 * r ^ 2 + r + 1) * (2 * d) ≤ (2 * r ^ 2 + r + 1) * (r - 3) :=
       mul_le_mul_of_nonneg_left hd_ub h_quad_pos.le
     have h_poly : (2 * r ^ 2 + r + 1) * (r - 3) = 2 * r ^ 3 - 5 * r ^ 2 - 2 * r - 3 := by ring
-    have h_r2 : 0 < 5 * r ^ 2 + 2 * r + 5 := by nlinarith
-    linarith
+    nlinarith
   set A : ℤ := r ^ 3 + r ^ 2
-  have hA_nonneg : 0 ≤ A := by dsimp [A]; positivity
+  have hA_nonneg : 0 ≤ A := by positivity
   rcases le_or_gt 0 Y with hY_nonneg | hY_neg
-  · have h1 : A < Y := by nlinarith
-    have h2 : Y < A + 1 := by nlinarith
-    linarith
-  · have h1 : A < -Y := by nlinarith
-    have h2 : -Y < A + 1 := by nlinarith
-    linarith
+  · nlinarith
+  · nlinarith
 
 /-- Consecutive-square squeeze for negative twist fibers. -/
 theorem R2_negative_fiber_no_square
@@ -56,28 +52,16 @@ theorem R2_negative_fiber_no_square
   have h_high : Y ^ 2 < (r ^ 3 + r ^ 2) ^ 2 := by
     have h_gap : (r ^ 3 + r ^ 2) ^ 2 - Y ^ 2 = -r ^ 3 - (2 * r ^ 2 + r + 1) * d := by
       rw [h_eq]; ring
-    have h_mul : (2 * r ^ 2 + r + 1) * (-2 * d) ≤ (2 * r ^ 2 + r + 1) * (r - 3) :=
-      mul_le_mul_of_nonneg_left (by linarith) h_quad_pos.le
-    have h_poly : (2 * r ^ 2 + r + 1) * (r - 3) = 2 * r ^ 3 - 5 * r ^ 2 - 2 * r - 3 := by ring
-    have h_r2 : 0 < 5 * r ^ 2 + 2 * r + 3 := by nlinarith
-    linarith
+    nlinarith
   have h_low : (r ^ 3 + r ^ 2 - 1) ^ 2 < Y ^ 2 := by
     have h_gap : Y ^ 2 - (r ^ 3 + r ^ 2 - 1) ^ 2 =
         3 * r ^ 3 + 2 * r ^ 2 - 1 + (2 * r ^ 2 + r + 1) * d := by
       rw [h_eq]; ring
-    have h_mul : (2 * r ^ 2 + r + 1) * (-2 * d) ≤ (2 * r ^ 2 + r + 1) * (r - 3) :=
-      mul_le_mul_of_nonneg_left (by linarith) h_quad_pos.le
-    have h_poly : (2 * r ^ 2 + r + 1) * (r - 3) = 2 * r ^ 3 - 5 * r ^ 2 - 2 * r - 3 := by ring
-    have h_r3 : 0 < 4 * r ^ 3 + 9 * r ^ 2 + 2 * r + 1 := by nlinarith
-    linarith
+    nlinarith
   set A : ℤ := r ^ 3 + r ^ 2 - 1
-  have hA_nonneg : 0 ≤ A := by dsimp [A]; nlinarith
+  have hA_nonneg : 0 ≤ A := by nlinarith
   rcases le_or_gt 0 Y with hY_nonneg | hY_neg
-  · have h1 : A < Y := by nlinarith
-    have h2 : Y < A + 1 := by nlinarith
-    linarith
-  · have h1 : A < -Y := by nlinarith
-    have h2 : -Y < A + 1 := by nlinarith
-    linarith
+  · nlinarith
+  · nlinarith
 
 end RCW_R2_TwistFibers
