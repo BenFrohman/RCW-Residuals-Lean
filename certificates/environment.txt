@@ -1,0 +1,6 @@
+commit: 229153f28a929801a25a8c74c9b9f8332d826e21
+lean-toolchain: leanprover/lean4:v4.14.0
+lean --version: Lean (version 4.14.0, x86_64-unknown-linux-gnu, commit 410fab728470, Release)
+lake --version: Lake version 5.0.0-410fab7 (Lean version 4.14.0)
+date (UTC): 2026-11-16T19:22:15Z
+run: https://github.com/BenFrohman/RCW-Residuals-Lean/actions/runs/43937933851

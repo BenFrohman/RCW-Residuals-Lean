@@ -1,0 +1,44 @@
+info: RCW-Residuals-Lean: no previous manifest, creating one from scratch
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+info: mathlib: checking out revision '4bbdccd9c5f862bf90ff12f0a9e2c8be032b9a84'
+info: toolchain not updated; already up-to-date
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '42dc02bdbc5d0c2f395718462a76c3d87318f7fa'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision 'd7caecce0d0f003fd5e9cce9a61f1dd6ba83142b'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision '519e509a28864af5bed98033dd33b95cf08e9aa7'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '68280daef58803f68368eb2e53046dabcd270c9d'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '5a0ec8588855265ade536f35bcdcf0fb24fd6030'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '303b23fbcea94ac4f96e590c1cad6618fd4f5f41'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision '8d6c853f11a5172efa0e96b9f2be1a83d861cdd9'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '726b3c9ad13acca724d4651f14afc4804a7b0e4d'
+info: mathlib: running post-update hooks
+✔ [2/10] Built Cache.IO
+✔ [3/10] Built Cache.Hashing
+✔ [4/10] Built Cache.Requests
+✔ [5/10] Built Cache.Hashing:c.o
+✔ [6/10] Built Cache.IO:c.o
+✔ [7/10] Built Cache.Main
+✔ [8/10] Built Cache.Main:c.o
+✔ [9/10] Built Cache.Requests:c.o
+✔ [10/10] Built cache
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1059k  100 1059k    0     0  8573k      0 --:--:-- --:--:-- --:--:-- 8573k
+
+installing leantar 0.1.14
+Attempting to download 5685 file(s)
+Downloaded: 1 file(s) [attempted 1/5685 = 0%]Downloaded: 102 file(s) [attempted 102/5685 = 1%]Downloaded: 219 file(s) [attempted 219/5685 = 3%]Downloaded: 344 file(s) [attempted 344/5685 = 6%]Downloaded: 479 file(s) [attempted 479/5685 = 8%]Downloaded: 610 file(s) [attempted 610/5685 = 10%]Downloaded: 740 file(s) [attempted 740/5685 = 13%]Downloaded: 875 file(s) [attempted 875/5685 = 15%]Downloaded: 1005 file(s) [attempted 1005/5685 = 17%]Downloaded: 1147 file(s) [attempted 1147/5685 = 20%]Downloaded: 1284 file(s) [attempted 1284/5685 = 22%]Downloaded: 1423 file(s) [attempted 1423/5685 = 25%]Downloaded: 1565 file(s) [attempted 1565/5685 = 27%]Downloaded: 1705 file(s) [attempted 1705/5685 = 29%]Downloaded: 1840 file(s) [attempted 1840/5685 = 32%]Downloaded: 1977 file(s) [attempted 1977/5685 = 34%]Downloaded: 2116 file(s) [attempted 2116/5685 = 37%]Downloaded: 2258 file(s) [attempted 2258/5685 = 39%]Downloaded: 2395 file(s) [attempted 2395/5685 = 42%]Downloaded: 2537 file(s) [attempted 2537/5685 = 44%]Downloaded: 2674 file(s) [attempted 2674/5685 = 47%]Downloaded: 2807 file(s) [attempted 2807/5685 = 49%]Downloaded: 2937 file(s) [attempted 2937/5685 = 51%]Downloaded: 3069 file(s) [attempted 3069/5685 = 53%]Downloaded: 3214 file(s) [attempted 3214/5685 = 56%]Downloaded: 3355 file(s) [attempted 3355/5685 = 59%]Downloaded: 3490 file(s) [attempted 3490/5685 = 61%]Downloaded: 3624 file(s) [attempted 3624/5685 = 63%]Downloaded: 3762 file(s) [attempted 3762/5685 = 66%]Downloaded: 3906 file(s) [attempted 3906/5685 = 68%]Downloaded: 4044 file(s) [attempted 4044/5685 = 71%]Downloaded: 4183 file(s) [attempted 4183/5685 = 73%]Downloaded: 4325 file(s) [attempted 4325/5685 = 76%]Downloaded: 4469 file(s) [attempted 4469/5685 = 78%]Downloaded: 4599 file(s) [attempted 4599/5685 = 80%]Downloaded: 4741 file(s) [attempted 4741/5685 = 83%]Downloaded: 4881 file(s) [attempted 4881/5685 = 85%]Downloaded: 5018 file(s) [attempted 5018/5685 = 88%]Downloaded: 5155 file(s) [attempted 5155/5685 = 90%]Downloaded: 5299 file(s) [attempted 5299/5685 = 93%]Downloaded: 5436 file(s) [attempted 5436/5685 = 95%]Downloaded: 5578 file(s) [attempted 5578/5685 = 98%]Downloaded: 5680 file(s) [attempted 5680/5685 = 99%]Downloaded: 5685 file(s) [attempted 5685/5685 = 100%] (100% success)
+Decompressing 5685 file(s)
+Unpacked in 11818 ms
+Completed successfully!
+✔ [5697/5699] Built RCW.R2TwistFibers
+✔ [5698/5699] Built RCW
+Build completed successfully.
