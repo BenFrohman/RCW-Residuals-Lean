@@ -12,10 +12,12 @@ import Mathlib
 Kernel-checked certificate that the residual elliptic curve
 `y² = x³ - x² - 12` (LMFDB 3936.b1) has no non-trivial integral
 points of finite order. By the Nagell–Lutz theorem this implies
-that the torsion subgroup over ℚ is trivial.
+that the torsion subgroup over ℍ is trivial.
 
-The only possible |y| by Nagell–Lutz are 0, 1, 2, 4, 8, 16.
-Each is discharged by a direct omega proof that the resulting cubic equation has no integer solution.
+The only possible absolute values of the y-coordinate for an integral
+torsion point are 0, 1, 2, 4, 8, 16. Each case is discharged by a
+direct `omega` proof that the resulting cubic equation has no integer
+solution.
 -/
 
 namespace RCW.EllipticTorsion
