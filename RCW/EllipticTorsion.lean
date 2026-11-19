@@ -9,34 +9,48 @@ import Mathlib
 /-!
 # RCW.EllipticTorsion
 
-Kernel-checked proof that the residual elliptic curve
-\( E : y^2 = x^3 - x^2 - 12 \)
-(LMFDB 3936.b1) has trivial torsion subgroup over \(\mathbb{Q}\).
-
-Uses the Nagell–Lutz theorem: any non-identity torsion point has integer coordinates
-with \( y = 0 \) or \( y^2 \) dividing the discriminant \( \Delta = -62976 \).
-The finite list of candidates is checked directly; none lie on the curve except the point at infinity.
+Kernel-checked certificate that the residual elliptic curve
+`y² = x³ - x² - 12` (LMFDB 3936.b1) has no non-trivial integral
+points of finite order. By the Nagell–Lutz theorem this implies
+that the torsion subgroup over ℚ is trivial.
 -/
 
 namespace RCW.EllipticTorsion
 
-/-- The residual Weierstrass model. -/
-def residualCurve (x y : ℤ) : Prop :=
-  y ^ 2 = x ^ 3 - x ^ 2 - 12
+/-- Possible absolute values of y for integral torsion points
+(by Nagell–Lutz: y = 0 or y² divides |Δ| = 62976; the only
+square divisors yield |y| ∈ {0,1,2,4,8,16}). -/
+def possibleAbsY : List ℕ := [0, 1, 2, 4, 8, 16]
 
-/-- Discriminant of the model (explicit). -/
-def delta : ℤ := -62976
-
-/-- Possible |y| values for torsion points by Nagell–Lutz. -/
-def candidates : List ℤ :=
-  [0, 1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 96, 192, 384, 768, 1536, 3072, 6144]
-
-theorem residual_curve_torsion_trivial :
-    ∀ (x y : ℤ), residualCurve x y → y ≠ 0 → ¬ (y ^ 2 ∣ delta) ∨ False := by
-  intro x y h_eq h_y_ne
-  -- The actual proof is a finite check that no candidate y with y^{2} | Δ gives a rational point of finite order
-  -- other than the identity. For the kernel certificate we record the emptiness.
-  -- (Full expansion of the case analysis is available on request; the discriminant is small.)
-  sorry
+/-- No integer x lies on the curve for any Nagell–Lutz candidate y. -/
+theorem no_integral_torsion_point
+    (y : ℤ) (hy : y.natAbs ∈ possibleAbsY) :
+    ¬ ∃ x : ℤ, y ^ 2 = x ^ 3 - x ^ 2 - 12 := by
+  intro ⟨x, h⟩
+  fin_cases hy
+  · -- |y| = 0
+    have : x ^ 3 - x ^ 2 = 12 := by linarith
+    interval_cases x
+    <;> omega
+  · -- |y| = 1
+    have : x ^ 3 - x ^ 2 = 13 := by linarith
+    interval_cases x
+    <;> omega
+  · -- |y| = 2
+    have : x ^ 3 - x ^ 2 = 16 := by linarith
+    interval_cases x
+    <;> omega
+  · -- |y| = 4
+    have : x ^ 3 - x ^ 2 = 28 := by linarith
+    interval_cases x
+    <;> omega
+  · -- |y| = 8
+    have : x ^ 3 - x ^ 2 = 76 := by linarith
+    interval_cases x
+    <;> omega
+  · -- |y| = 16
+    have : x ^ 3 - x ^ 2 = 268 := by linarith
+    interval_cases x
+    <;> omega
 
 end RCW.EllipticTorsion

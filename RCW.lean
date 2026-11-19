@@ -5,6 +5,7 @@ Authors: Benjamin Stanley Frohman
 -/
 
 import RCW.R2TwistFibers
+import RCW.EllipticTorsion
 
 /-!
 # RCW
