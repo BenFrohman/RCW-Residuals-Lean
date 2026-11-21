@@ -57,65 +57,91 @@ private lemma cubic_too_big (x c a : ℤ) (h : x ^ 3 - x ^ 2 = c) (hx : a ≤ x)
   have : a * a * (a - 1) ≤ x ^ 2 * (x - 1) := by simpa [sq, mul_assoc] using le_trans hmul hmul2
   linarith
 
-private lemma no_cubic_small (x c : ℤ) (h : x ^ 3 - x ^ 2 = c) (hc : -80 < c)
-    (hbig : c < 5 * 5 * 4) : False := by
+private lemma no_cubic_small (x : ℤ) {c : ℤ} (h : x ^ 3 - x ^ 2 = c) (hc : -80 < c)
+    (hbig : c < 5 * 5 * 4)
+    (h3 : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c) (h2 : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
+    (h1 : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c) (h0 : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
+    (hp1 : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c) (hp2 : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
+    (hp3 : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c) (hp4 : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c) : False := by
   have hsplit :
       x ≤ -4 ∨ x = -3 ∨ x = -2 ∨ x = -1 ∨ x = 0 ∨ x = 1 ∨ x = 2 ∨ x = 3 ∨ x = 4 ∨ 5 ≤ x := by
     omega
   rcases hsplit with hx | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | hx
   · exact cubic_too_small x c h hx hc
-  · exact absurd h (by decide : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c)
-  · exact absurd h (by decide : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
-  · exact absurd h (by decide : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c)
-  · exact absurd h (by decide : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c)
+  · exact h3 h
+  · exact h2 h
+  · exact h1 h
+  · exact h0 h
+  · exact hp1 h
+  · exact hp2 h
+  · exact hp3 h
+  · exact hp4 h
   · exact cubic_too_big x c 5 h hx (by decide) hbig
 
-private lemma no_cubic_wide (x c : ℤ) (h : x ^ 3 - x ^ 2 = c) (hc : -80 < c)
-    (hbig : c < 7 * 7 * 6) : False := by
+private lemma no_cubic_wide (x : ℤ) {c : ℤ} (h : x ^ 3 - x ^ 2 = c) (hc : -80 < c)
+    (hbig : c < 7 * 7 * 6)
+    (h3 : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c) (h2 : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
+    (h1 : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c) (h0 : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
+    (hp1 : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c) (hp2 : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
+    (hp3 : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c) (hp4 : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c)
+    (hp5 : (5 : ℤ) ^ 3 - (5 : ℤ) ^ 2 ≠ c) (hp6 : (6 : ℤ) ^ 3 - (6 : ℤ) ^ 2 ≠ c) : False := by
   have hsplit :
       x ≤ -4 ∨ x = -3 ∨ x = -2 ∨ x = -1 ∨ x = 0 ∨ x = 1 ∨ x = 2 ∨ x = 3 ∨ x = 4 ∨ x = 5 ∨
         x = 6 ∨ 7 ≤ x := by
     omega
   rcases hsplit with hx | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | hx
   · exact cubic_too_small x c h hx hc
-  · exact absurd h (by decide : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c)
-  · exact absurd h (by decide : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
-  · exact absurd h (by decide : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c)
-  · exact absurd h (by decide : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (5 : ℤ) ^ 3 - (5 : ℤ) ^ 2 ≠ c)
-  · exact absurd h (by decide : (6 : ℤ) ^ 3 - (6 : ℤ) ^ 2 ≠ c)
+  · exact h3 h
+  · exact h2 h
+  · exact h1 h
+  · exact h0 h
+  · exact hp1 h
+  · exact hp2 h
+  · exact hp3 h
+  · exact hp4 h
+  · exact hp5 h
+  · exact hp6 h
   · exact cubic_too_big x c 7 h hx (by decide) hbig
 
+private lemma ne_window (c : ℤ) : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c ∧ (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c ∧ (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c ∧ (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c ∧ (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c ∧ (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c := by
+  decide
+
 theorem no_point_y0 (x : ℤ) (h : 0 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 12 := by linarith
-  exact no_cubic_small x 12 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 12 := by linarith
+  have hw := ne_window 12
+  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y1 (x : ℤ) (h : 1 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 13 := by linarith
-  exact no_cubic_small x 13 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 13 := by linarith
+  have hw := ne_window 13
+  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y2 (x : ℤ) (h : 4 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 16 := by linarith
-  exact no_cubic_small x 16 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 16 := by linarith
+  have hw := ne_window 16
+  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y4 (x : ℤ) (h : 16 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 28 := by linarith
-  exact no_cubic_small x 28 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 28 := by linarith
+  have hw := ne_window 28
+  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y8 (x : ℤ) (h : 64 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 76 := by linarith
-  exact no_cubic_small x 76 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 76 := by linarith
+  have hw := ne_window 76
+  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y16 (x : ℤ) (h : 256 = x ^ 3 - x ^ 2 - 12) : False := by
-  have : x ^ 3 - x ^ 2 = 268 := by linarith
-  exact no_cubic_wide x 268 this (by decide) (by decide)
+  have hc : x ^ 3 - x ^ 2 = 268 := by linarith
+  have hw := ne_window 268
+  exact no_cubic_wide x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
+    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2 (by decide) (by decide)
 
 end RCW.EllipticTorsion
