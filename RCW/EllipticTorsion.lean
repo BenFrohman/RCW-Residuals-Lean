@@ -103,44 +103,56 @@ private lemma no_cubic_wide (x : ℤ) {c : ℤ} (h : x ^ 3 - x ^ 2 = c) (hc : -8
   · exact hp6 h
   · exact cubic_too_big x c 7 h hx (by decide) hbig
 
-private lemma ne_window (c : ℤ) : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c ∧ (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c ∧
-    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c ∧ (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c ∧ (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c ∧
-    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c ∧ (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c ∧ (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c := by
-  decide
+private lemma ne_at (c : ℤ)
+    (h3 : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c) (h2 : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
+    (h1 : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c) (h0 : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
+    (hp1 : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c) (hp2 : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
+    (hp3 : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c) (hp4 : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c) :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c ∧ (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c ∧
+      (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c ∧ (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c ∧
+      (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c ∧ (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c ∧
+      (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c ∧ (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c :=
+  ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩
 
 theorem no_point_y0 (x : ℤ) (h : 0 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 12 := by linarith
-  have hw := ne_window 12
+  have hw := ne_at 12 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y1 (x : ℤ) (h : 1 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 13 := by linarith
-  have hw := ne_window 13
+  have hw := ne_at 13 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y2 (x : ℤ) (h : 4 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 16 := by linarith
-  have hw := ne_window 16
+  have hw := ne_at 16 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y4 (x : ℤ) (h : 16 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 28 := by linarith
-  have hw := ne_window 28
+  have hw := ne_at 28 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y8 (x : ℤ) (h : 64 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 76 := by linarith
-  have hw := ne_window 76
+  have hw := ne_at 76 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
 
 theorem no_point_y16 (x : ℤ) (h : 256 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 268 := by linarith
-  have hw := ne_window 268
+  have hw := ne_at 268 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
+    (by decide) (by decide)
   exact no_cubic_wide x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
     hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2 (by decide) (by decide)
 
