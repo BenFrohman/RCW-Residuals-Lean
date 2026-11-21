@@ -103,57 +103,102 @@ private lemma no_cubic_wide (x : ℤ) {c : ℤ} (h : x ^ 3 - x ^ 2 = c) (hc : -8
   · exact hp6 h
   · exact cubic_too_big x c 7 h hx (by decide) hbig
 
-private lemma ne_at (c : ℤ)
-    (h3 : (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c) (h2 : (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c)
-    (h1 : (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c) (h0 : (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c)
-    (hp1 : (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c) (hp2 : (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c)
-    (hp3 : (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c) (hp4 : (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c) :
-    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ c ∧ (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ c ∧
-      (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ c ∧ (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ c ∧
-      (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ c ∧ (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ c ∧
-      (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ c ∧ (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ c :=
-  ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩
+private lemma ne12 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 12 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 12 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 12 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 12 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 12 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 12 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 12 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 12 := by
+  decide
+
+private lemma ne13 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 13 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 13 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 13 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 13 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 13 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 13 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 13 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 13 := by
+  decide
+
+private lemma ne16 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 16 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 16 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 16 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 16 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 16 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 16 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 16 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 16 := by
+  decide
+
+private lemma ne28 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 28 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 28 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 28 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 28 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 28 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 28 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 28 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 28 := by
+  decide
+
+private lemma ne76 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 76 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 76 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 76 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 76 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 76 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 76 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 76 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 76 := by
+  decide
+
+private lemma ne268 :
+    (-3 : ℤ) ^ 3 - (-3) ^ 2 ≠ 268 ∧
+    (-2 : ℤ) ^ 3 - (-2) ^ 2 ≠ 268 ∧
+    (-1 : ℤ) ^ 3 - (-1) ^ 2 ≠ 268 ∧
+    (0 : ℤ) ^ 3 - (0 : ℤ) ^ 2 ≠ 268 ∧
+    (1 : ℤ) ^ 3 - (1 : ℤ) ^ 2 ≠ 268 ∧
+    (2 : ℤ) ^ 3 - (2 : ℤ) ^ 2 ≠ 268 ∧
+    (3 : ℤ) ^ 3 - (3 : ℤ) ^ 2 ≠ 268 ∧
+    (4 : ℤ) ^ 3 - (4 : ℤ) ^ 2 ≠ 268 ∧
+    (5 : ℤ) ^ 3 - (5 : ℤ) ^ 2 ≠ 268 ∧
+    (6 : ℤ) ^ 3 - (6 : ℤ) ^ 2 ≠ 268 := by
+  decide
 
 theorem no_point_y0 (x : ℤ) (h : 0 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 12 := by linarith
-  have hw := ne_at 12 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩ := ne12
+  exact no_cubic_small x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4
 
 theorem no_point_y1 (x : ℤ) (h : 1 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 13 := by linarith
-  have hw := ne_at 13 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩ := ne13
+  exact no_cubic_small x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4
 
 theorem no_point_y2 (x : ℤ) (h : 4 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 16 := by linarith
-  have hw := ne_at 16 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩ := ne16
+  exact no_cubic_small x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4
 
 theorem no_point_y4 (x : ℤ) (h : 16 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 28 := by linarith
-  have hw := ne_at 28 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩ := ne28
+  exact no_cubic_small x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4
 
 theorem no_point_y8 (x : ℤ) (h : 64 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 76 := by linarith
-  have hw := ne_at 76 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_small x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4⟩ := ne76
+  exact no_cubic_small x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4
 
 theorem no_point_y16 (x : ℤ) (h : 256 = x ^ 3 - x ^ 2 - 12) : False := by
   have hc : x ^ 3 - x ^ 2 = 268 := by linarith
-  have hw := ne_at 268 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide) (by decide)
-  exact no_cubic_wide x hc (by decide) (by decide) hw.1 hw.2.1 hw.2.2.1 hw.2.2.2.1 hw.2.2.2.2.1
-    hw.2.2.2.2.2.1 hw.2.2.2.2.2.2.1 hw.2.2.2.2.2.2.2 (by decide) (by decide)
+  obtain ⟨h3, h2, h1, h0, hp1, hp2, hp3, hp4, hp5, hp6⟩ := ne268
+  exact no_cubic_wide x hc (by decide) (by decide) h3 h2 h1 h0 hp1 hp2 hp3 hp4 hp5 hp6
 
 end RCW.EllipticTorsion
