@@ -48,3 +48,7 @@ All authorship: Benjamin Stanley Frohman. Grok Heavy assistance disclosed only i
 ---
 
 Copyright (c) 2026 Benjamin Stanley Frohman. Released under Apache-2.0 (see LICENSE).
+
+## Addendum (23 November 2026)
+
+The accurate residual ledger, including the Roy Choudhury–Wei $n\le 10^{12}$ computational emptiness bound and the distinction between kernel-checked theorems and computational surveys, is in [`docs/RESIDUAL_LEDGER.md`](RESIDUAL_LEDGER.md) and the README. The sieve counts to $Q=10^5$ recorded above (raw pairs ~409k, survivors ~152k, 740 candidates) were not located in an independent source file and should not be treated as a verified certificate. The Lean torsion theorems are `no_point_y0`, `no_point_y1`, `no_point_y2`, `no_point_y4`, `no_point_y8`, and `no_point_y16`; they are the Nagell–Lutz window checks, not a formalized “trivial torsion” theorem.
